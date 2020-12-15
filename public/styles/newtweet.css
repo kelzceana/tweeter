@@ -1,0 +1,33 @@
+.new-tweet{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.5em;
+  flex-grow: 4;
+  
+
+ }
+ 
+ .form-bar {
+   display: flex;
+   flex-direction: column;
+  }
+ 
+  textarea {
+    width: 100%;
+    border:none;
+    background-color: transparent;
+    border-bottom: 4px solid #000;  
+  }
+ 
+  .tweetbutton {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.4em;
+  }
+  
+  button {
+    background-color: #4056A1;
+    color: #FFFFFF;
+  }
+ 

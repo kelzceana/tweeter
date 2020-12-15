@@ -1,0 +1,23 @@
+ nav {
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  background-color: #4056A1 ;
+  color: #FFFFFF;
+  padding: 1.5em;
+ }
+
+ nav .header {
+  font-family: "Bungee", sans-serif ;
+  display: flex;
+ }
+
+ nav .navtext {
+   display: flex;
+   font-size: 16px;
+ }
+
+ nav .navp {
+   display: flex;
+   flex-direction: row;
+ }
