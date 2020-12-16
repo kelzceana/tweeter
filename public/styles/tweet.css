@@ -1,0 +1,45 @@
+.tweet {
+  border:3px solid black;
+  padding: 0.5em;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px grey;  
+}
+/*to style the article header*/
+article.tweet header{
+  margin: 4px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+/*to style the header icon*/
+header img.icon {
+  width: 5em;
+  mix-blend-mode: multiply;
+}
+
+/*to style the header*/
+header div.tweet-icon {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/*to style the body holing the tweet content*/
+article div.tweet-body {
+  font-size: 14px;
+}
+
+/*to style the horizontal line*/
+.line {
+  border: 1px solid black; 
+}
+
+/*to style the footer*/
+article.tweet footer {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
