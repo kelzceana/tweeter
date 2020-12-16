@@ -4,7 +4,11 @@
   height: 120px;
   background-color: #4056A1 ;
   color: #FFFFFF;
+  top: 0;
+  
   padding: 1.5em;
+  position: fixed;
+  width: 100%;
  }
 
  nav .header {
