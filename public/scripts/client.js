@@ -5,32 +5,8 @@
  */
 
 
- const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
  
- $(function() {
+
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $htmltweet = createTweetElement(tweet);
@@ -65,10 +41,10 @@
 
   return tweetArticle;
  };
- renderTweets(tweetData)
+ 
  // AJAX POST for submit button
-
-
+ 
+ $(function() {
   const $form = $("#newtweet")
   $form.submit(function(event) {
     event.preventDefault();
@@ -81,8 +57,19 @@
     }).then(res => {
       console.log(res)
     })
+    
+  });
 
-  })
+  // function to load tweets from the server
+  const loadTweets = function() {
+    $.getJSON("/tweets", function(data) {
+      console.log('success',data)
+    })
+    .then(function (tweetdata) {
+      renderTweets(tweetdata)
+    })
+  };
+  loadTweets()
  });
  
  
