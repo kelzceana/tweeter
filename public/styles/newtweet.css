@@ -9,6 +9,7 @@
  .form-bar {
    display: flex;
    flex-direction: column;
+   padding-top: 20px;
   }
  
   #tweet-text {
@@ -27,5 +28,17 @@
   button {
     background-color: #4056A1;
     color: #FFFFFF;
+  }
+  
+  .errormessage {
+    border: 1px solid #fcc2c3;
+    justify-content: left;
+    padding: 0px 30px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-radius: 25px;
+    font-weight: bolder;
+    color: #D8000C;
+    background-color: #FFD2D2;
   }
   
