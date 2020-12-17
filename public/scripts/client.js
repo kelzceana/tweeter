@@ -3,18 +3,15 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-
- 
-
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const $htmltweet = createTweetElement(tweet);
-      $('#tweets-container').append($htmltweet)
+      $('#tweets-container').prepend($htmltweet)
     }
   };
 
   const createTweetElement = function(tweetData) {
+    const safeHTML = `<p>${escape(tweetData['content'].text)}</p>`
    // using jquery to create a DOM object
    const tweetArticle = `<article class="tweet"> 
     <header>
@@ -25,7 +22,7 @@
       <div><p>${tweetData['user'].handle}</p></div>
     </header>
     <div class="tweet-body">
-      <p>${tweetData['content'].text}</p>
+      ${safeHTML}
    </div>
    <hr class="line">
     <footer class="footer">
@@ -42,6 +39,13 @@
   return tweetArticle;
  };
  
+ //handle XSS edge case
+ const escape =  function(str) {
+  let p = document.createElement('p');
+  p.appendChild(document.createTextNode(str));
+  return p.innerHTML;
+}
+
  // AJAX POST for submit button
  
  $(function() {
@@ -49,15 +53,26 @@
   $form.submit(function(event) {
     event.preventDefault();
     const tweetcontent = $(this).children("#tweet-text")
-    console.log(tweetcontent)
-    $.ajax({
-      method: 'POST',
-      url: "/tweets",
-      data: $(this).serialize()
-    }).then(res => {
-      console.log(res)
-    })
-    
+    //console.log(tweetcontent.val().length)
+    if (tweetcontent.val() ==='' || tweetcontent.val() === null) {
+      $("#error").html("!!! Whats tweeter without a tweet?")
+      $("#error").addClass("errormessage")
+    } else if (tweetcontent.val().length > 140) {
+      $("#error").html("!!! Tweet too long")
+      $("#error").addClass("errormessage")
+    }
+    else {
+      $("#error").html("")
+      $("#error").removeClass("errormessage")
+      $.ajax({
+        method: 'POST',
+        url: "/tweets",
+        data: $(this).serialize()
+      }).then(res => {
+        $("textarea").val("");
+        loadTweets()
+      })
+    }
   });
 
   // function to load tweets from the server
