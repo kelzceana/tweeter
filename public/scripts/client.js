@@ -1,3 +1,19 @@
+const tweetData = {
+  "user": {
+    "name": "Newton",
+    "avatars": "https://i.imgur.com/73hZDYK.png",
+      "handle": "@SirIsaac"
+    },
+  "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+  "created_at": 1461116232227
+}
+
+
+
+
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -10,7 +26,39 @@
     }
   };
 
+
+
+  //Convert JSON date to normal date and get time since tweet was madee3cx
+   
+  const timesince = function(jsonDate) {
+    const sec = Math.floor((new Date() - jsonDate) / 1000);
+    let interval = Math.floor(sec / 31536000)
+    if (interval > 1) {
+      return interval + 'years';
+    }
+    interval = Math.floor(sec / 2592000);
+    if (interval > 1) {
+      return interval + " months";
+    }
+    interval = Math.floor(sec / 86400);
+    if (interval > 1) {
+      return interval + " days";
+    }
+    interval = Math.floor(sec / 3600);
+    if (interval > 1) {
+      return interval + " hours";
+    }
+    interval = Math.floor(sec / 60);
+    if (interval > 1) {
+      return interval + " minutes";
+    }
+    return Math.floor(sec) + " seconds";
+  }
+
+
   const createTweetElement = function(tweetData) {
+
+    // convert data to safe data
     const safeHTML = `<p>${escape(tweetData['content'].text)}</p>`
    // using jquery to create a DOM object
    const tweetArticle = `<article class="tweet"> 
@@ -27,7 +75,7 @@
    <hr class="line">
     <footer class="footer">
     
-     <p>${tweetData['created_at']}</p>
+     <p>${timesince(tweetData['created_at']) + "   ago"}</p>
       <div>
         <i class="fa fa-flag"></i>
         <i class="fa fa-retweet"></i>
@@ -53,9 +101,8 @@
   $form.submit(function(event) {
     event.preventDefault();
     const tweetcontent = $(this).children("#tweet-text")
-    //console.log(tweetcontent.val().length)
-    if (tweetcontent.val() ==='' || tweetcontent.val() === null) {
-      $("#error").html("!!! Whats tweeter without a tweet?")
+    if (!tweetcontent.val() || tweetcontent.val() === null) {
+      $("#error").html("!!! Whats Tweeter without a tweet?")
       $("#error").addClass("errormessage")
     } else if (tweetcontent.val().length > 140) {
       $("#error").html("!!! Tweet too long")

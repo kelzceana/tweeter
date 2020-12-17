@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap" type="text/css">
     <!--Font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -31,13 +32,15 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="header">Tweeter</span>
-      <div>
-        <span class="navtext">Write a new tweet</span>
-        <i class="fa fa-angle-double-down"></i>
+      <div class="navtext">
+        <span>Write a new tweet</span>
+        <a href="#tweetsection" class="arrowicon">
+        <i class="fa fa-angle-double-down "></i>
+      </a>
       </div>
     </nav>
 
-    <header class="header-bar">
+    <header class="header-bar" id="tweetsection">
       <div>
         <img src="/images/profile-hex.png">
       </div>
@@ -48,8 +51,8 @@
     </header>
     
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
+    <main class="container" >
+      <section class="new-tweet" >
         <div id="error">  
         </div>
         <form class="form-bar" id="newtweet" method='POST' action="/tweets/">
