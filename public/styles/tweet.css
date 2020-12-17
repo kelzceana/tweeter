@@ -19,7 +19,7 @@ article.tweet header{
 /*to style the header icon*/
 header img.icon {
   width: 5em;
-  mix-blend-mode: multiply;
+  
 }
 
 /*to style the header*/
