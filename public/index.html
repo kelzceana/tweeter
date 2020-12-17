@@ -33,7 +33,7 @@
       <span class="header">Tweeter</span>
       <div>
         <span class="navtext">Write a new tweet</span>
-        <p>≫</p>
+        <i class="fa fa-angle-double-down"></i>
       </div>
     </nav>
 
@@ -50,6 +50,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div id="error">  
+        </div>
         <form class="form-bar" id="newtweet" method='POST' action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -58,6 +60,7 @@
             <output id="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+          
       </section>
       <br>
       <div id="tweets-container"></div>
