@@ -6,10 +6,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## My Tweeter Application
  
-!(https://github.com/kelzceana/tweeter/blob/master/public/images/full_screen_1.png)
-!(https://github.com/kelzceana/tweeter/blob/master/public/images/full_screen_2.png)
-!(https://github.com/kelzceana/tweeter/blob/master/public/images/responsivedesign1.png)
-!(https://github.com/kelzceana/tweeter/blob/master/public/images/responsivedesign2.png)
+![](https://github.com/kelzceana/tweeter/blob/master/public/images/full_screen_1.png)
+![](https://github.com/kelzceana/tweeter/blob/master/public/images/full_screen_2.png)
+![](https://github.com/kelzceana/tweeter/blob/master/public/images/responsivedesign1.png)
+![](https://github.com/kelzceana/tweeter/blob/master/public/images/responsivedesign2.png)
 
 
 
