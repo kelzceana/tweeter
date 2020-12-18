@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+//looping through the tweets in the server and creating HTML element for each tweet
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const $htmltweet = createTweetElement(tweet);
@@ -10,7 +11,7 @@ const renderTweets = function(tweets) {
   }
 };
 
-//Convert JSON date to normal date and get time since tweet was madee3cx
+//Convert JSON date to normal date and get time since tweet was made
 const timesince = function(jsonDate) {
   const sec = Math.floor((new Date() - jsonDate) / 1000);
   let interval = Math.floor(sec / 31536000);
@@ -36,7 +37,7 @@ const timesince = function(jsonDate) {
   return Math.floor(sec) + " seconds";
 };
 
-
+//creating html element for a tweet
 const createTweetElement = function(tweetData) {
   // convert data to safe data
   const safeHTML = `<p>${escape(tweetData['content'].text)}</p>`;
