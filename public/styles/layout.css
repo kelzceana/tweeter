@@ -32,8 +32,23 @@ body {
    flex-direction: column;
    align-content: flex-start;
    justify-content: flex-start;
-   padding: 1.5em;
+   
    
  }
+
+
+/* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .container {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    
+  }
+  
+}
 
  

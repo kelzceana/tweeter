@@ -7,3 +7,30 @@
   align-items: center;
   background-color: #dba10f;
 }
+ /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
+ @media only screen and (min-width: 1024px) {
+ 
+  body {
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .header-bar {
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+    margin-top: 100px ;
+    margin-left: 20px;
+    height: 400px;
+    width: 50%;
+    
+  }
+  .container {
+    margin-top: 100px ;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  
+
+}
