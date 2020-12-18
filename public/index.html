@@ -3,6 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
+    
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
@@ -41,10 +42,10 @@
     </nav>
 
     <header class="header-bar" id="tweetsection">
-      <div>
+      <div class="userimage">
         <img src="/images/profile-hex.png">
       </div>
-      <br>
+      
       <div>
         <h2>Kelechi Edeh</h2>
       </div>
@@ -57,7 +58,7 @@
         </div>
         <form class="form-bar" id="newtweet" method='POST' action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea  cols='50' rows='2' name="text" id="tweet-text"></textarea>
           <div class="tweetbutton">
             <button type="submit" id="tweetsubmit">Tweet</button>
             <output id="counter" class="counter" for="tweet-text">140</output>
